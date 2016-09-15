@@ -56,6 +56,10 @@
 
         function scoreCheck3($input)
         {
+            if (!$input || strpos($input, " ")) {
+                $word_score = "Not a Valid word";
+                return $word_score;
+            }
             $word_score = 0;
             $filter_input = strtoupper($input);
             $filter_input = str_split($filter_input);
