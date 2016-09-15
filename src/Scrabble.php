@@ -38,6 +38,46 @@
             return $word_score;
         }
 
+        function scoreCheck2($input)
+        {
+            $word_score = 0;
+            $filter_input = strtoupper($input);
+            $filter_input = str_split($filter_input);
+            $score = array(null, 'AEIOULNRST', 'DG', 'BCMP', 'FHVWY', 'K', null, null, 'JX', null, 'QZ');
+            for ($i = 0; $i < sizeof($filter_input); $i++) {
+                for ($j = 0; $j < sizeof($score); $j++) {
+                    if (strpos($score[$j], $filter_input[$i]) !== false) {
+                        $word_score += $j;
+                    }
+                }
+            }
+            return $word_score;
+        }
+
+        function scoreCheck3($input)
+        {
+            $word_score = 0;
+            $filter_input = strtoupper($input);
+            $filter_input = str_split($filter_input);
+            $score = array(
+                'AEIOULNRST' => 1,
+                'DG' => 2,
+                'BCMP' => 3,
+                'FHVWY' => 4,
+                'K' => 5,
+                'JX' => 8,
+                'QZ' => 10
+            );
+            foreach ($filter_input as $letter) {
+                foreach ($score as $key => $value) {
+                    if (strpos($key, $letter) !== false) {
+                        $word_score += $value;
+                    }
+                }
+            }
+            return $word_score;
+        }
+
     }
 
 

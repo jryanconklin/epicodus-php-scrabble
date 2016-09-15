@@ -9,7 +9,7 @@
             $test_Scrabble = new Scrabble;
             $input = 'E';
             // Act
-            $result = $test_Scrabble->scoreCheck($input);
+            $result = $test_Scrabble->scoreCheck3($input);
             // Assert
             $this->assertEquals(1, $result);
         }
@@ -20,7 +20,7 @@
             $test_Scrabble = new Scrabble;
             $input = 'rest';
             // Act
-            $result = $test_Scrabble->scoreCheck($input);
+            $result = $test_Scrabble->scoreCheck3($input);
             // Assert
             $this->assertEquals(4, $result);
         }
@@ -31,7 +31,7 @@
             $test_Scrabble = new Scrabble;
             $input = 'gore';
             // Act
-            $result = $test_Scrabble->scoreCheck($input);
+            $result = $test_Scrabble->scoreCheck3($input);
             // Assert
             $this->assertEquals(5, $result);
         }
@@ -42,7 +42,7 @@
             $test_Scrabble = new Scrabble;
             $input = 'quitter';
             // Act
-            $result = $test_Scrabble->scoreCheck($input);
+            $result = $test_Scrabble->scoreCheck3($input);
             // Assert
             $this->assertEquals(16, $result);
         }
